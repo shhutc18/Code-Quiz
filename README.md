@@ -14,7 +14,7 @@ To use this webpage, you can click on "Start Quiz". By doing so, this will take 
 
 ## Credits
 
-I worked on this project with my study group peers, Chase Seeberger and Will Schickler. Starter code was provided by University of Oregon coding bootcamp.
+I worked on this project with my study group peers, Chase Seeberger and Will Schickler.
 
 ## Link
 
