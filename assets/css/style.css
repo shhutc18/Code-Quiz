@@ -2,7 +2,7 @@
   position: fixed;
   top: 5px;
   left: 10px;
-  font-size: 10px;
+  font-size: 36px;
   color: blueviolet;
 }
   
@@ -21,12 +21,12 @@
   height: 100vh;
 }
 
-h3 {
+h1 {
   font-size: 50px;
   padding-top: 100px;
 }
 
-p {
+main p {
   font-size: 30px;
   text-align: center;
   margin-top: 0;
@@ -42,4 +42,18 @@ button {
   background-color: darkblue;
   color: white;
   cursor: pointer;
+}
+
+.answers {
+  display: none;
+}
+
+#correct {
+  display: none;
+  color: green;
+}
+
+#wrong {
+  display: none;
+  color: red;
 }

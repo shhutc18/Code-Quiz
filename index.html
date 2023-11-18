@@ -10,20 +10,30 @@
   <body>
     <header>
         <div class="left-corner">
-            <h1>View high scores</h1>
+            <a>View high scores</a>
           </div>
           <div class="right-corner">
             <!-- Insert countdown timer -->
-            <h2>Timer</h2>
+            <p>Timer</p>
         </div>
     </header>
     <main>
         <section class="center-content">
-            <h3>Coding Quiz Challenge</h3>
-            <p>
+            <h1>Coding Quiz Challenge</h1>
+            <p id="question">
                 Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your time/score by ten seconds!
             </p>
-            <button id="startButton">Start Quiz</button>
+            <div class="answers">
+              <button id="btn1">Button 1</button>
+              <button id="btn2">Button 2</button>  
+              <button id="btn3">Button 3</button>
+              <button id="btn4">Button 4</button>
+            </div>
+            <div>
+              <p id="correct">Correct!</p>
+              <p id="wrong">Wrong!</p>
+            </div>
+            <button id="startButton" onclick="startQuiz()">Start Quiz</button>
         </section>
     </main>
     <script src="script.js"></script>
