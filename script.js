@@ -1,6 +1,12 @@
 let correctDisplay = document.getElementById("correct");
 let wrongDisplay = document.getElementById("wrong");
 let questionDisplay = document.getElementById("question");
+let timeDisplay = document.getElementById("timeDisplay");
+let leaderBoard = document.getElementById("leaderBoard");
+let quiz = document.getElementById("quiz");
+let submitScore = document.getElementById("submitScore");
+let submitScoreBtn = document.getElementById("submitScoreBtn");
+let scoresDisplay = document.getElementById("scores");
 const questions = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -29,10 +35,20 @@ const questions = [
       },
 ]
 let question;
+let timer;
+let timeLeft = 75; 
 
 function startQuiz() {
     document.getElementById("startButton").style.display = "none";
     document.querySelector(".answers").style.display = "block";
+    timeDisplay.textContent = "Time:" + timeLeft;
+    timer = setInterval(function () {
+        timeLeft--;
+        timeDisplay.textContent = "Time:" + timeLeft;
+        if (timeLeft <= 0) {
+            showScore();
+        }
+    }, 1000);
     displayQuestion();
 }
 
@@ -53,6 +69,62 @@ function checkAnswer() {
     if (question.correct === this.textContent) {
         correctDisplay.style.display = "block";
     } else {
-        wrongDisplay.style.display = "block";   
+        wrongDisplay.style.display = "block";
+        timeLeft -= 10; 
+    }
+    // remove question from array
+    questions.splice(questions.indexOf(question), 1);
+    if (questions.length === 0) {
+        // quiz is over if no more questions left
+        showScore();
+    }
+    // displays a new question
+    displayQuestion();
+}
+
+function showScore() {
+    clearInterval(timer);
+    submitScore.style.display = "flex";
+    quiz.style.display = "none";
+}
+
+function showLeaderBoard() {
+    clearInterval(timer);
+    quiz.style.display = "none";
+    submitScore.style.display = "none";
+    leaderBoard.style.display = "flex";
+    let scores = JSON.parse(localStorage.getItem("scores"));
+    scores.sort(function (a, b) {
+        return b.score - a.score;
+    });
+    scoresDisplay.innerHTML = "";
+    for (let score of scores) {
+        let li = document.createElement("li");
+        li.textContent = score.initials + " : " + score.score;
+        scoresDisplay.appendChild(li);
     }
 }
+
+function startScreen () {
+    window.location.reload();
+}
+
+function resetLeaderBoard() {
+    localStorage.removeItem("scores");
+    scoresDisplay.innerHTML = "";
+}
+
+submitScoreBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    let score = {
+        score: timeLeft,
+        initials: document.getElementById("initials").value
+    }
+    let scores = JSON.parse(localStorage.getItem("scores"));
+    if (scores === null) {
+        scores = [];
+    }
+    scores.push(score);
+    localStorage.setItem("scores", JSON.stringify(scores));
+    showLeaderBoard();
+});
