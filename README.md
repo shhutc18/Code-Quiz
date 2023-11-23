@@ -22,7 +22,7 @@ https://shhutc18.github.io/Code-Quiz/
 
 ## Screenshot
 
-<img src="assets/images/CodingQuizFinal.jpg">
+<img src="./assets/images/CodingQuizFinal.jpg">
 
 ## License
 
