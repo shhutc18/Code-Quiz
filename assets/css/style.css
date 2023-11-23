@@ -1,3 +1,32 @@
+/* CSS has been organized to follow semantic structure */
+
+/* Element Selectors */
+
+h1 {
+  font-size: 50px;
+  padding-top: 100px;
+}
+
+main p {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: darkblue;
+  color: white;
+  cursor: pointer;
+}
+
+/* Class Selectors */
+
 .left-corner {
   position: fixed;
   top: 15px;
@@ -30,33 +59,12 @@
   height: 100vh;
 }
 
-h1 {
-  font-size: 50px;
-  padding-top: 100px;
-}
-
-main p {
-  font-size: 30px;
-  text-align: center;
-  margin-top: 0;
-  padding-left: 250px;
-  padding-right: 250px;
-}
-
-button {
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  background-color: darkblue;
-  color: white;
-  cursor: pointer;
-}
-
 .answers {
   display: none;
   padding-bottom: 20px;
 }
+
+/* ID Selectors */
 
 #correct {
   display: none;
