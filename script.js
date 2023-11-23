@@ -84,6 +84,7 @@ function checkAnswer() {
 
 function showScore() {
     clearInterval(timer);
+    document.querySelector("#userScore").innerHTML = "Your final score is " + timeLeft;
     submitScore.style.display = "flex";
     quiz.style.display = "none";
 }

@@ -79,3 +79,16 @@ button {
 #submitScore {
   display: none;
 }
+
+#userScore {
+  color: grey;
+}
+
+#submitScoreBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: darkblue;
+  color: white;
+  cursor: pointer;
+}
