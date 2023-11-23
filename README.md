@@ -18,11 +18,11 @@ I worked on this project with my study group peers, Chase Seeberger and Will Sch
 
 ## Link
 
-<!-- Add link to DEPLOYED application -->
+https://shhutc18.github.io/Code-Quiz/
 
 ## Screenshot
 
-<!-- Add screenshot of start page of quiz -->
+<img src="assets/images/CodingQuizFinal.jpg">
 
 ## License
 
