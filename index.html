@@ -9,16 +9,19 @@
   </head>
   <body>
     <main>
+      <!-- Quiz container -->
         <section class="center-content" id="quiz">
             <header>
+              <!-- Toggle Leaderboard -->
             <div class="left-corner">
                 <a onclick="showLeaderBoard()">View high scores</a>
               </div>
               <div class="right-corner">
-                <!-- Insert countdown timer -->
+                <!-- Quiz timer -->
                 <p id="timeDisplay">Time: 75</p>
             </div>
             </header>
+            <!-- Quiz -->
             <h1>Coding Quiz Challenge</h1>
             <p id="question">
                 Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your time/score by ten seconds!
@@ -45,12 +48,14 @@
             <input type="submit" value="Submit" id="submitScoreBtn">
           </form>
         </section>
-
+        <!-- Leaderboard container -->
         <section class="center-content" id="leaderBoard">
           <header>
+            <!-- Refresh quiz -->
             <div class="left-corner">
               <a onclick="startScreen()">Go Back To Quiz</a>
             </div>
+            <!-- Leaderboard -->
           <h1>High Scores</h1>
           <button onclick="resetLeaderBoard()">Clear high scores</button>
           <ol id="scores">
